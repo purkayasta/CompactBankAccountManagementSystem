@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="Online_Banking_Mid.Admin.Dashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .welcome{
+            border:1px solid black;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            
+        }
+        li{
+            float:right;
+            border:1px solid black;
+        }
+        li a {
+            display:block;
+            text-align:center;
+            padding: 12px 12px;
+        }
+        li a:hover{
+            background-color:cornflowerblue;
+        }
+
+        .sidebar{
+            margin-top:auto;
+            width:90px;
+            text-align:center;
+            display:block;
+            border:1px solid black;
+            float:left;
+        }
+        .auto-style1 {
+            border: 1px solid black;
+            float: left;
+            height: 15px;
+            width: 139px;
+            margin-top: 0px;
+        }
+    </style>
+    <!-- Don't Touch iT -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="auto-style1" style="padding: 12px 12px; display:block; ">
+            <asp:Label ID="Label1" runat="server" Text="Welcome::"></asp:Label>
+            <asp:Label ID="userLabel" runat="server" Text=""></asp:Label>
+        </div>
+        <div class="profilebar" style="height: 44px">
+           <ul>
+              <li> <asp:HyperLink ID="HyperLink8" runat="server" Font-Underline="False" NavigateUrl="~/Admin/logoutadmin.aspx">Logout</asp:HyperLink> </li>
+              <li> <asp:HyperLink ID="HyperLink7" runat="server">Profile</asp:HyperLink> </li>
+              <li> <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/HomeDash.aspx" Font-Underline="False" >Home</asp:HyperLink> </li>
+           </ul>
+        </div>
+
+        <div class="sidebar">
+            <br />
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/Add_User.aspx" Font-Underline="False">Add User</asp:HyperLink>
+            <br /><br />
+            <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="False" NavigateUrl="~/Admin/Deposit.aspx">Deposit</asp:HyperLink>
+            <br /><br />
+            <asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="False" NavigateUrl="~/Admin/Withdraw.aspx">Withdraw</asp:HyperLink>
+            <br /><br />
+            <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="False" NavigateUrl="~/Admin/Transfer.aspx">Transfer</asp:HyperLink>
+            <br /><br />
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Admin/Report.aspx" Font-Underline="False">Report</asp:HyperLink>
+            <br /><br />
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+        <!-- Don't Touch iT -->
+        
+    </div>
+    </form>
+</body>
+</html>
