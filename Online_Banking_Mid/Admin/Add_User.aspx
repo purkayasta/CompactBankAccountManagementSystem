@@ -18,6 +18,9 @@
         .auto-style5 {
             margin-left: 146px;
         }
+    .auto-style6 {
+        margin-left: 0px;
+    }
     </style>
    
 </asp:Content>
@@ -26,7 +29,7 @@
         <table cellpadding="15">
             <tr>
                 <td class="auto-style2"> Account Number</td>
-                <td class="auto-style3"> <asp:TextBox ID="acc_number_box" runat="server" Width="205px"></asp:TextBox> 
+                <td class="auto-style3"> <asp:TextBox ID="acc_number_box" runat="server" Width="204px" CssClass="auto-style6"></asp:TextBox> 
                     
                 </td>
             </tr>

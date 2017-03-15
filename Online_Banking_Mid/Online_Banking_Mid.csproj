@@ -60,12 +60,14 @@
   <ItemGroup>
     <Content Include="Admin\Add_User.aspx" />
     <Content Include="Admin\Deposit.aspx" />
+    <Content Include="Admin\edit_Users.aspx" />
     <Content Include="Admin\HomeDash.aspx" />
     <Content Include="Admin\logoutadmin.aspx" />
     <Content Include="Admin\Report.aspx" />
     <Content Include="Admin\Transfer.aspx" />
     <Content Include="Admin\Withdraw.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Pictures\search.png" />
     <Content Include="User\changePass.aspx" />
     <Content Include="User\Homepage.aspx" />
     <Content Include="User\userlogout.aspx" />
@@ -94,6 +96,13 @@
     </Compile>
     <Compile Include="Admin\Deposit.aspx.designer.cs">
       <DependentUpon>Deposit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_Users.aspx.cs">
+      <DependentUpon>edit_Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_Users.aspx.designer.cs">
+      <DependentUpon>edit_Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\HomeDash.aspx.cs">
       <DependentUpon>HomeDash.aspx</DependentUpon>
