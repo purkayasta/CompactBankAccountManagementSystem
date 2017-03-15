@@ -68,7 +68,7 @@
             <br />
             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/Add_User.aspx" Font-Underline="False">Add User</asp:HyperLink>
             <br /><br />
-            <asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="False" NavigateUrl="~/Admin/edit_Users.aspx" >Edit User</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="False" NavigateUrl="~/Admin/View_UserList.aspx" >View User</asp:HyperLink>
             <br /><br />
             <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="False" NavigateUrl="~/Admin/Deposit.aspx">Deposit</asp:HyperLink>
             <br /><br />

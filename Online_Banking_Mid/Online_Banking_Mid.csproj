@@ -60,7 +60,7 @@
   <ItemGroup>
     <Content Include="Admin\Add_User.aspx" />
     <Content Include="Admin\Deposit.aspx" />
-    <Content Include="Admin\edit_Users.aspx" />
+    <Content Include="Admin\View_UserList.aspx" />
     <Content Include="Admin\HomeDash.aspx" />
     <Content Include="Admin\logoutadmin.aspx" />
     <Content Include="Admin\Pictures\wallup-8180.jpg" />
@@ -68,7 +68,9 @@
     <Content Include="Admin\Transfer.aspx" />
     <Content Include="Admin\Withdraw.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Admin\Pictures\search.png" />
+    <Content Include="Admin\Pictures\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Admin\Pictures\test.jpg" />
     <Content Include="User\changePass.aspx" />
     <Content Include="User\Homepage.aspx" />
@@ -99,12 +101,12 @@
     <Compile Include="Admin\Deposit.aspx.designer.cs">
       <DependentUpon>Deposit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\edit_Users.aspx.cs">
-      <DependentUpon>edit_Users.aspx</DependentUpon>
+    <Compile Include="Admin\View_UserList.aspx.cs">
+      <DependentUpon>View_UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\edit_Users.aspx.designer.cs">
-      <DependentUpon>edit_Users.aspx</DependentUpon>
+    <Compile Include="Admin\View_UserList.aspx.designer.cs">
+      <DependentUpon>View_UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\HomeDash.aspx.cs">
       <DependentUpon>HomeDash.aspx</DependentUpon>
