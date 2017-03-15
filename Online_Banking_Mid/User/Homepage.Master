@@ -6,33 +6,31 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+        
+        .welcome{
+            float:left;
             
         }
-        li{
-            float:left;
+        .header{
+            float:right;
+
+            
+            
         }
-        li a {
-            display:block;
-            text-align:center;
-            padding: 14px 14px;
-        }
-        li a:hover{
-            background-color:cornflowerblue;
-        }
+        
         .auto-style1 {
-            height: 50px;
-            float: right;
-            margin-left: 297px;
+            height: 43px;
+            background-color:#3B5998;
+            
         }
+        
         .auto-style2 {
-            width: 58px;
-            height: 45px;
+            float: left;
+            width: 166px;
+            height: 39px;
+            text-align:center;
         }
+        
         </style>
     <!-- Content Holder! Don't Touch Or Write any code inside!  -->
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -40,23 +38,29 @@
     <meta name="description" content="The description of my page" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div style="float:left; height:50px ; padding:12px; display:block;">
-        Welcome
-        <asp:Label ID="userLabel" runat="server" Text=""></asp:Label>
-    </div>
-    <div class="auto-style1">
-         <ul>
-              <li class=""> <asp:HyperLink ID="HyperLink4" runat="server" Height="16px" Width="45px" Font-Underline="False" NavigateUrl="~/User/userlogout.aspx">Logout</asp:HyperLink></li>
-              <li> <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="False" NavigateUrl="~/User/Summary.aspx" Width="87px" Height="20px">Account Summary</asp:HyperLink></li>
-              <li> <asp:HyperLink ID="HyperLink2" runat="server" Font-Underline="False" NavigateUrl="~/User/Transfer.aspx">Transfer</asp:HyperLink></li>
-              <li> <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="False" NavigateUrl="~/User/changePass.aspx" Height="18px">Edit</asp:HyperLink></li>
-             <li> <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="False" NavigateUr="~/User/Homepage.aspx" Height="19px" NavigateUrl="~/User/Homepage.aspx">Home</asp:HyperLink> </li>
-           </ul>
-    </div>
-        
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
+    <form id="form1" runat="server" class="auto-style1">
+        <div class="auto-style2">
+            <asp:Label ID="Label1" runat="server" Text="Welcome:" Font-Size="16pt" ForeColor="White"></asp:Label>
+            <asp:Label ID="userLabel" runat="server" ForeColor="White"></asp:Label>
+        </div>
+        <div class="header">
+            <asp:HyperLink ID="HyperLink5" ForeColor="White" runat="server" Font-Underline="False" NavigateUrl="~/User/Homepage.aspx" Font-Size="14pt">Home</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink1" ForeColor="White" runat="server" Font-Underline="False" NavigateUrl="~/User/changePass.aspx" Font-Size="14pt">Edit</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink6" ForeColor="White" runat="server" Font-Underline="False" NavigateUrl="~/User/Summary.aspx" Font-Size="14pt">Account Summary</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink2" ForeColor="White" runat="server" Font-Underline="False" NavigateUrl="~/User/Transfer.aspx" Font-Size="14pt">Transfer</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink4" ForeColor="White" runat="server"  Font-Underline="False" NavigateUrl="~/User/userlogout.aspx" Font-Size="14pt">Logout</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;
+            
+            &nbsp;&nbsp;&nbsp;
+           
+        </div>
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
     </form>
+    
 </body>
 </html>
