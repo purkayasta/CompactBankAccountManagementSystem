@@ -63,12 +63,13 @@
     <Content Include="Admin\edit_Users.aspx" />
     <Content Include="Admin\HomeDash.aspx" />
     <Content Include="Admin\logoutadmin.aspx" />
+    <Content Include="Admin\Pictures\wallup-8180.jpg" />
     <Content Include="Admin\Report.aspx" />
     <Content Include="Admin\Transfer.aspx" />
     <Content Include="Admin\Withdraw.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Pictures\search.png" />
-    <Content Include="Pictures\test.jpg" />
+    <Content Include="Admin\Pictures\search.png" />
+    <Content Include="Admin\Pictures\test.jpg" />
     <Content Include="User\changePass.aspx" />
     <Content Include="User\Homepage.aspx" />
     <Content Include="User\userlogout.aspx" />

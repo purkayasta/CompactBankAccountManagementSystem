@@ -22,8 +22,7 @@ namespace Online_Banking_Mid.Admin
         {
             string currentTime = DateTime.Now.ToString();
 
-            string path = "Pictures/";
-            string rootedPath = "~/Pictures/";
+            
 
             if (user_pic_upload.HasFile)
             {
@@ -31,11 +30,13 @@ namespace Online_Banking_Mid.Admin
 
                 if (extention == ".jpg" || extention == ".png")
                 {
+
+
                     string name = user_pic_upload.FileName;
 
-                    user_pic_upload.SaveAs(Server.MapPath(rootedPath)+ name);
+                    user_pic_upload.PostedFile.SaveAs(Server.MapPath(".") + "//Pictures//" + name );
 
-                    string userpicture = path + name;
+                    string userpicture = "~//Pictures//" + name.ToString();
 
 
 

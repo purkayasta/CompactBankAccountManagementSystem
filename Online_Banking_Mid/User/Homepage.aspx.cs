@@ -33,7 +33,7 @@ namespace Online_Banking_Mid.User
                 sda.Fill(dataTable);
 
                 DetailsView1.DataSource = dataTable;
-                DetailsView1.DataBind();
+                DataBind();
             }
 
             
