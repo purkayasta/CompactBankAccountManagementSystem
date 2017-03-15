@@ -11,9 +11,23 @@ namespace Online_Banking_Mid.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+        }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (GridView1.SelectedRow != null)
+            {
+                DetailsView1.Visible = true;
+            }
+            else
+            {
+                DetailsView1.Visible = false;
+            }
+            
         }
 
-        
+
+
+
     }
 }

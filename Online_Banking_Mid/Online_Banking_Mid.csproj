@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Add_User.aspx" />
+    <Content Include="Admin\adminProfile.aspx" />
     <Content Include="Admin\Deposit.aspx" />
     <Content Include="Admin\View_UserList.aspx" />
     <Content Include="Admin\HomeDash.aspx" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="Admin\Add_User.aspx.designer.cs">
       <DependentUpon>Add_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminProfile.aspx.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminProfile.aspx.designer.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.Master.cs">
       <DependentUpon>Dashboard.Master</DependentUpon>

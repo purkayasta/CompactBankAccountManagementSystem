@@ -23,7 +23,7 @@
         li a {
             display:block;
             text-align:center;
-            padding: 12px 12px;
+            padding: 11px 11px;
         }
         li a:hover{
             background-color:cornflowerblue;
@@ -59,7 +59,7 @@
         <div class="profilebar" style="height: 44px">
            <ul>
               <li> <asp:HyperLink ID="HyperLink8" runat="server" Font-Underline="False" NavigateUrl="~/Admin/logoutadmin.aspx">Logout</asp:HyperLink> </li>
-              <li> <asp:HyperLink ID="HyperLink7" runat="server">Profile</asp:HyperLink> </li>
+              <li> <asp:HyperLink ID="HyperLink7" runat="server" Font-Underline="False" NavigateUrl="~/Admin/adminProfile.aspx">Profile</asp:HyperLink> </li>
               <li> <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/HomeDash.aspx" Font-Underline="False" >Home</asp:HyperLink> </li>
            </ul>
         </div>
