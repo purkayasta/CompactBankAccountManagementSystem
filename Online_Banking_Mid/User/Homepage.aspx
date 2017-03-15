@@ -2,12 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Head -->
-    <style type="text/css">
-        .auto-style3 {
-            margin-top: 52px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,26 +10,41 @@
     <br />
     <div align="center">
         <br />
-        
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="165px" Width="482px" AutoGenerateRows="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" GridLines="Horizontal" AllowPaging="True" CssClass="auto-style3">
-            <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="220px" Width="376px" AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+            <EditRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
             <Fields>
-                <asp:BoundField DataField="acc_no" HeaderText="Account Number" SortExpression="acc_no" />
-                <asp:BoundField DataField="acc_name" HeaderText="Account Name" SortExpression="acc_name" />
-                <asp:BoundField DataField="acc_pass" HeaderText="Account Password" SortExpression="acc_pass" />
-                <asp:BoundField DataField="acc_image" HeaderText="Image" SortExpression="acc_image" />
-                <asp:BoundField DataField="acc_opening_date" HeaderText="Account Opening Date" SortExpression="acc_opening_date" />
-                <asp:BoundField DataField="acc_balance" HeaderText="Total Balance" SortExpression="acc_balance" />
+                <asp:TemplateField HeaderText="Image">
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" ImageUrl=' <% #Eval("acc_image") %> ' Height="100" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Account Number">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text=' <% #Eval("acc_no") %> '></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Account Name">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text=' <% #Eval("acc_name") %> ' ></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Account Password">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text=' <% #Eval("acc_pass") %> ' ></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Account Balance">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text=' <% #Eval("acc_balance") %> '></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Fields>
-            <FooterStyle BackColor="White" ForeColor="#333333" />
-            <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="White" ForeColor="#333333" />
+            
+            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
         </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBC %>" SelectCommand="SELECT * FROM [users] WHERE ([acc_no] = @acc_no)">
-            <SelectParameters>
-                <asp:SessionParameter Name="acc_no" SessionField="user" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
+
     </div>
 </asp:Content>

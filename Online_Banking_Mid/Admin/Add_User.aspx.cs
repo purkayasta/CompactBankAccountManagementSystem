@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Online_Banking_Mid.Admin
 {
@@ -25,32 +22,66 @@ namespace Online_Banking_Mid.Admin
         {
             string currentTime = DateTime.Now.ToString();
 
-            string sql = "INSERT into users Values ('" + acc_number_box.Text+ "','"+ acc_name_box.Text +"','"+ acc_pass_box.Text +"','','"+currentTime.ToString()+"','')";
+            string path = "Pictures/";
+            string rootedPath = "~/Pictures/";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["DBC"].ConnectionString;
-
-            SqlConnection connect = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(sql, connect);
-
-            connect.Open();
-
-            try
+            if (user_pic_upload.HasFile)
             {
-                int n = cmd.ExecuteNonQuery();
+                string extention = Path.GetExtension(user_pic_upload.FileName);
 
-                if (n == 1)
+                if (extention == ".jpg" || extention == ".png")
                 {
-                    connect.Close();
-                    Response.Write("<script>alert('Account Added!!')</script>");
+                    string name = user_pic_upload.FileName;
+
+                    user_pic_upload.SaveAs(Server.MapPath(rootedPath)+ name);
+
+                    string userpicture = path + name;
+
+
+
+                    string sql = "INSERT into users Values ('" + acc_number_box.Text + "','" + acc_name_box.Text + "','" + acc_pass_box.Text + "','" + userpicture + "','" + currentTime.ToString() + "','')";
+
+                    string connectionString = ConfigurationManager.ConnectionStrings["DBC"].ConnectionString;
+
+                    SqlConnection connect = new SqlConnection(connectionString);
+                    SqlCommand cmd = new SqlCommand(sql, connect);
+
+                    connect.Open();
+
+                    try
+                    {
+                        int n = cmd.ExecuteNonQuery();
+
+                        if (n == 1)
+                        {
+                            connect.Close();
+                            Response.Write("<script>alert('Account Added!!')</script>");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Not Added!')</script>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("<script>alert('Duplicate Account Found')</script>");
+
+                    }
+
+
+
+
+
                 }
                 else
                 {
-                    Response.Write("<script>alert('Not Added!')</script>");
+                    Response.Write("<script>alert('Upload Only JPG or PNG Format Image File')</script>");
                 }
+                
+                
             }
-            catch (Exception ex)
+            else
             {
-                Response.Write("<script>alert('Duplicate Account Found')</script>");
 
             }
         }

@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Online_Banking_Mid.User
 {
@@ -11,6 +10,33 @@ namespace Online_Banking_Mid.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.LoadData();
+            
+        }
+        protected void LoadData()
+        {
+
+            if (Session["user"]!= null)
+            {
+                string us = Session["user"].ToString();
+
+                string newsql = "select * from users where acc_no = '" + us + "' ";
+
+                string connectionString = ConfigurationManager.ConnectionStrings["DBC"].ConnectionString;
+
+                SqlConnection connect = new SqlConnection(connectionString);
+
+                SqlDataAdapter sda = new SqlDataAdapter(newsql, connect);
+
+                DataTable dataTable = new DataTable();
+
+                sda.Fill(dataTable);
+
+                DetailsView1.DataSource = dataTable;
+                DetailsView1.DataBind();
+            }
+
+            
 
         }
     }
