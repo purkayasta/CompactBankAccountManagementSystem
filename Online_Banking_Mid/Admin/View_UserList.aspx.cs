@@ -17,10 +17,12 @@ namespace Online_Banking_Mid.Admin
         {
             if (GridView1.SelectedRow != null)
             {
+                Label1.Visible = true;
                 DetailsView1.Visible = true;
             }
             else
             {
+                Label1.Visible = false;
                 DetailsView1.Visible = false;
             }
             
