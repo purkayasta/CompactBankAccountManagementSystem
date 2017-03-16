@@ -36,7 +36,7 @@ namespace Online_Banking_Mid.Admin
 
                     user_pic_upload.PostedFile.SaveAs(Server.MapPath(".") + "//Pictures//" + name );
 
-                    string userpicture = "~//Pictures//" + name.ToString();
+                    string userpicture = "~/Admin/Pictures/" + name.ToString();
 
 
 
